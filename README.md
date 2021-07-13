@@ -1,6 +1,6 @@
 # Project Title
 
-Fast-COPY
+FAST-COPY
 
 ## Description
 
