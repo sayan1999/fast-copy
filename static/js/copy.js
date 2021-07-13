@@ -1,5 +1,17 @@
-window.onload = fetchclipboard();
-document.getElementById('text').focus();
+window.onload = init()
+
+function sleep(time) {
+    return new Promise((resolve) => setTimeout(resolve, time));
+}
+
+
+function init() {
+    sleep(500).then(() => {
+        document.getElementById('url').innerText = 'Visit ' + window.location.href + ' on other devices'
+        fetchclipboard();
+        document.getElementById('text').focus();
+    });
+}
 
 function fetchclipboard() {
     fetch(window.location.href + 'fetch')
