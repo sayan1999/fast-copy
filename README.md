@@ -1,6 +1,6 @@
-# Project Title
+# FAST-COPY
 
-FAST-COPY
+A fast simple solution for clipboard sync between devices.
 
 ## Description
 
