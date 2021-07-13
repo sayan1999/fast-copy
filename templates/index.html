@@ -1,52 +1,9 @@
 <!DOCTYPE html>
 <html>
 
-<style>
-    div {
-        margin: 20px;
-    }
-    
-    textarea {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        white-space: pre-wrap;
-        overflow-wrap: break-word;
-        white-space: pre-line;
-    }
-    
-    .copyfield {
-        min-height: 10px;
-        border: 1px solid green
-    }
-    
-    div {
-        white-space: pre-wrap;
-        overflow-wrap: break-word;
-        white-space: pre-line;
-    }
-    
-    .buttonModifier {
-        background-color: #3e8e41;
-        color: white;
-        border-radius: 10px;
-        border: 1px solid white;
-        display: inline-block;
-        cursor: pointer;
-        font-family: Arial;
-        font-size: 25px;
-    }
-    
-    .buttonModifier:hover {
-        background-color: red;
-    }
-    
-    li {
-        border: 1px solid green;
-        padding: 15px;
-        margin-top: 5px;
-    }
-</style>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<script src="{{ url_for('static', filename='js/copy.js')}}"></script>
+<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
 
 <head>
     <title>Fast Copy</title>
@@ -54,77 +11,9 @@
 
 <body>
     <textarea class="copyfield" id='text' rows="4" style='border:1px solid green' cols="100" maxlength="200" type="text" name="CopyText"></textarea>
-    <input type="button" class='buttonModifier' style="margin:auto;display:block;" value="Push Text" onclick="posttext()">
+    <input type="button" class='buttonModifier' style="margin:auto;display:block;" value="Push Text" onclick="posttext();document.getElementById('text').value = '';">
 
     <ul id="copylist">Clipboard History</ul>
 </body>
-
-
-<script type="text/javascript">
-    window.onload = fetchclipboard()
-    window.onload = document.querySelector('#text').focus()
-
-    function fetchclipboard() {
-        fetch(window.location.href + 'fetch')
-            .then(response => response.json())
-            .then(copylist => showlist(copylist))
-    }
-
-    function copytext() {
-        let textid = this.id + 'text'
-        document.getElementById(textid).select();
-        document.execCommand("copy")
-    }
-
-    function showlist(copylist) {
-
-        let i = 0;
-        for (let copy of copylist) {
-            i = i + 1
-            let node = document.createElement("LI");
-            let hiddentxt = document.createElement('textarea');
-            hiddentxt.value = copy.replace('<br>', '\n');
-            hiddentxt.id = i.toString() + 'text';
-            hiddentxt.style = "width:1px;height:1px;"
-
-            let textnode = document.createElement('div');
-            textnode.innerText = copy;
-
-
-            let button = document.createElement("button");
-            button.innerHTML = 'Copy Text'
-            button.className = 'buttonModifier'
-            button.id = i.toString();
-            button.onclick = copytext
-            node.appendChild(button);
-            node.appendChild(textnode);
-            node.appendChild(hiddentxt);
-            document.getElementById("copylist").appendChild(node);
-        }
-    }
-
-    function posttext() {
-        if (!document.getElementById('text').value.replace(/\s/g, "").length) {
-            alert("Don't Paste NULL")
-            return
-        }
-        fetch(window.location.href + "posttext", {
-                method: "POST",
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    'text': document.getElementById('text').value
-                })
-            })
-            .then(response => response.json())
-            .then(text => {
-                document.getElementById("copylist").innerHTML = '';
-                showlist(text);
-            });
-    }
-</script>
-
 
 </html>

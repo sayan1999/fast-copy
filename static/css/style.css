@@ -1,0 +1,44 @@
+div {
+    margin: 20px;
+}
+
+textarea {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    white-space: pre-line;
+}
+
+.copyfield {
+    min-height: 10px;
+    border: 1px solid green
+}
+
+div {
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    white-space: pre-line;
+}
+
+.buttonModifier {
+    background-color: #3e8e41;
+    color: white;
+    border-radius: 10px;
+    border: 1px solid white;
+    display: inline-block;
+    cursor: pointer;
+    font-family: Arial;
+    font-size: 25px;
+}
+
+.buttonModifier:hover {
+    background-color: red;
+}
+
+li {
+    border: 1px solid green;
+    padding: 15px;
+    margin-top: 5px;
+}
