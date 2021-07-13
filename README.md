@@ -61,5 +61,9 @@ Sayan Dey
 
 ## Version History
 
-* 0.1
+* 1.0
     * Initial Release
+
+## License
+
+See the LICENSE.md file for details
