@@ -1,0 +1,5 @@
+#!/bin/bash
+cd /media/NTFSDrive/Documents/Projects/github.com/sayan1999/applications/fast-copy
+./server.py &
+brave-browser $(python3 -c 'import socket; print("http://"+socket.gethostbyname(socket.gethostname())+":5000");')
+sleep infinity

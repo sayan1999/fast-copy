@@ -14,9 +14,9 @@ All you need is your devices connected to the same network (router or direct mob
 * Easy to copy buttons
 * Fast
 * Preserves white Space and Line Breaks
-* Can save upto 100 clipboard history ( can be increased in the config.txt file)
+* **Can save upto 100 clipboard history ( can be increased in the config.txt file)**
 
-## Demo 
+## Demo
 
 ![Demo](Demo/demo.gif)
 

@@ -1,7 +1,7 @@
 import json, os, configparser
 cfg = configparser.RawConfigParser()
 cfg.read('config.txt')
-historylimit=cfg.get('clipconfig', 'history')
+historylimit=int(cfg.get('clipconfig', 'history'))
 
 def enlistcopy(newentry=None):
     if not os.path.isfile('clip.json'):
