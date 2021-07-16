@@ -10,10 +10,16 @@
 </head>
 
 <body>
-    <textarea class="copyfield" id='text' rows="4" style='border:1px solid green' cols="100" maxlength="200" type="text" name="CopyText"></textarea>
-    <input type="button" class='buttonModifier' style="margin:auto;display:block;" value="Push Text" onclick="posttext();document.getElementById('text').value = '';">
-    <p style='text-align:center;font-family:verdana;color:hotpink;' id='url'></p>
-    <ul id="copylist"><span style="font-size:30px;font-family:verdana;color:green;">Clipboard History</span></ul>
+    <textarea class="userinput" id='text' placeholder="Write or paste what you want to sync" rows="4" cols="100" maxlength="200" type="text" name="CopyText"></textarea>
+    <!-- <span>&nbsp;</span> -->
+    <p style='text-align:center;' class='preview'>Press Enter to submit and Shift+Enter to newline</p>
+    <!-- <span>&nbsp;</span> -->
+    <input type="button" id="pushbutton" class=' buttonModifier pushbutton ' value="Submit" onclick="posttext();document.getElementById('text').value = ' ';">
+    <span>&nbsp;</span>
+    <input type="button" class='buttonModifier pushbutton ' value="Refresh" onclick="refreshclipboard();">
+    <p id='url'></p>
+    <ul id="copylist"><span class='pinktext '>My Clipboard History</span></ul>
+    <div id="hiddendiv"></div>
 </body>
 
 </html>

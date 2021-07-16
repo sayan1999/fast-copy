@@ -1,25 +1,59 @@
-div {
-    margin: 20px;
+body {
+    background: #000000;
+    color: #999;
+    line-height: 1.6;
 }
 
-textarea {
+.hiddentext {
+    opacity: 0;
+    position: absolute;
+    z-index: -9999;
+}
+
+li {
+    border: 1px solid green;
+    padding: 5px;
+    margin: 5px;
+}
+
+.userinput:focus {
+    outline: 1px;
+    border: 1px solid red;
+    box-shadow: 0 0 10px #719ECE;
+    font-family: "Times New Roman", Georgia, Serif;
+}
+
+.preview {
+    color: azure;
+    white-space: pre;
+    overflow-wrap: break-word;
+    white-space: pre-line;
+    margin-top: 5px;
+    padding: 5px;
+}
+
+.userinput {
     display: block;
     margin-left: auto;
     margin-right: auto;
     white-space: pre-wrap;
     overflow-wrap: break-word;
     white-space: pre-line;
+    outline: 1px;
+    border: 2px solid green;
+    box-shadow: 0 0 10px white;
+    font-family: "Times New Roman", Georgia, Serif;
 }
 
-.copyfield {
-    min-height: 10px;
-    border: 1px solid green
+.pushbutton {
+    width: 20%;
+    margin-left: 40%;
+    margin-right: 40%;
+    font-size: 25px;
 }
 
-div {
-    white-space: pre-wrap;
-    overflow-wrap: break-word;
-    white-space: pre-line;
+.copybutton {
+    font-size: 20px;
 }
 
 .buttonModifier {
@@ -30,15 +64,15 @@ div {
     display: inline-block;
     cursor: pointer;
     font-family: Arial;
-    font-size: 25px;
 }
 
 .buttonModifier:hover {
     background-color: red;
 }
 
-li {
-    border: 1px solid green;
-    padding: 15px;
-    margin-top: 5px;
+.pinktext {
+    text-align: center;
+    font-size: 30px;
+    color: hotpink;
+    font-family: "Times New Roman", Georgia, Serif;
 }
